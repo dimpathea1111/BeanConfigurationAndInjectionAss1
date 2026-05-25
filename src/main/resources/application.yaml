@@ -3,3 +3,5 @@
 spring:
   application:
     name: Assigment1Spring
+server:
+  port: 8080

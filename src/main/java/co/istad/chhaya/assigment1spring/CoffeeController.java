@@ -2,21 +2,25 @@ package co.istad.chhaya.assigment1spring;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @RestController
+@RequestMapping("/api")
 public class CoffeeController {
-    private final ArrayList<Coffee> coffeeList;
-
-    public CoffeeController(ArrayList<Coffee> coffeeList){
-        this.coffeeList=coffeeList;
+    private final List<Coffee> coffees;
+    public CoffeeController(List<Coffee> coffees){
+        this.coffees=coffees;
     }
 
-    @GetMapping("/api/coffees")
-    public ArrayList<Coffee> getAllCoffees(){
-        return coffeeList;
+    @GetMapping("/coffees")
+    public Map<String, Object> getCoffees(){
+        return  Map.of(
+                "coffees", coffees
+        );
     }
 
 }

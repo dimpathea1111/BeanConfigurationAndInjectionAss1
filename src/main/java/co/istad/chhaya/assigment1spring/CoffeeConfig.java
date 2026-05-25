@@ -3,32 +3,56 @@ package co.istad.chhaya.assigment1spring;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 @Configuration
 public class CoffeeConfig {
 
+  @Bean
+    public Coffee  cortado(){
+      Coffee coffee=new Coffee();
+      coffee.setCode(UUID.randomUUID().toString());
+      coffee.setName("Cortado");
+      coffee.setPrice(1.25);
+      coffee.setIsAvailable(true);
+      return coffee;
+  }
+
     @Bean
-    public Coffee coffee1(){
-        return new Coffee("A001", "Latte", 2.5, true);
+    public Coffee  macchiato(){
+        Coffee coffee=new Coffee();
+        coffee.setCode(UUID.randomUUID().toString());
+        coffee.setName("Macchiato");
+        coffee.setPrice(2.50);
+        coffee.setIsAvailable(true);
+
+        return coffee;
     }
 
     @Bean
-    public Coffee coffee2(){
-        return new Coffee("A002", "Espresso", 2.0, false);
-    }
-    @Bean
-    public Coffee coffee3(){
-        return new Coffee("A003", "Matcha", 3.0, true);
+    public Coffee  mocha(){
+        Coffee coffee=new Coffee();
+        coffee.setCode(UUID.randomUUID().toString());
+        coffee.setName("Mocha");
+        coffee.setPrice(2.00);
+        coffee.setIsAvailable(true);
+        return coffee;
     }
 
     @Bean
-    public ArrayList<Coffee> coffeeList(){
-        ArrayList<Coffee> list=new ArrayList<>();
-        list.add(coffee1());
-        list.add(coffee2());
-        list.add(coffee3());
-        return list;
+    public List<Coffee> coffees(
+            Coffee cortado,
+            Coffee macchiato,
+            Coffee mocha
+    ){
+      return  List.of(
+              cortado,
+              macchiato,
+              mocha
+      );
     }
+
+
 
 }
