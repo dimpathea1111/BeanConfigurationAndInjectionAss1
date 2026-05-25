@@ -12,7 +12,7 @@ public class CoffeeConfig {
   @Bean
     public Coffee  cortado(){
       Coffee coffee=new Coffee();
-      coffee.setCode(UUID.randomUUID().toString());
+      coffee.setCode("A001");
       coffee.setName("Cortado");
       coffee.setPrice(1.25);
       coffee.setIsAvailable(true);
@@ -22,7 +22,7 @@ public class CoffeeConfig {
     @Bean
     public Coffee  macchiato(){
         Coffee coffee=new Coffee();
-        coffee.setCode(UUID.randomUUID().toString());
+        coffee.setCode("A002");
         coffee.setName("Macchiato");
         coffee.setPrice(2.50);
         coffee.setIsAvailable(true);
@@ -33,7 +33,7 @@ public class CoffeeConfig {
     @Bean
     public Coffee  mocha(){
         Coffee coffee=new Coffee();
-        coffee.setCode(UUID.randomUUID().toString());
+        coffee.setCode("A003");
         coffee.setName("Mocha");
         coffee.setPrice(2.00);
         coffee.setIsAvailable(true);
